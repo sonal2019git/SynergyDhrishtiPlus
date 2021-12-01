@@ -1,4 +1,4 @@
-package com.example.synergydhrishtiplus;
+package com.synergy.synergydhrishtiplus;
 
 import org.junit.Test;
 
