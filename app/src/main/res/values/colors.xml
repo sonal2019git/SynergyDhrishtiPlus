@@ -5,6 +5,18 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="black">#010101</color>
+    <color name="black_light_1">#343434</color>
+    <color name="black_light_2">#31302C</color>
+    <color name="dark_red">#F20C01</color>
+    <color name="red_blur">#80E81F1F</color>
+    <color name="top_bar_color">#343434</color>
+    <color name="stock_fragment_bg">#31302C</color>
+    <color name="xtra_premium_95">#D84507</color>
+    <color name="xtra_premium">#AE3B85</color>
+    <color name="petrol_color">#F57C00</color>
+    <color name="diesel_color">#024764</color>
 </resources>
