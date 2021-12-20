@@ -73,13 +73,17 @@ public class ScannerDialogFragment extends DialogFragment {
                 SocketCreate.updateListner(new CheckConnectedAndDisconnectedListner() {
                     @Override
                     public void updateSocketGlobal(int portNo) {
-                        requireActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                ((DPApplication) requireActivity().getApplication()).setSocketData(SocketCreate.getSocket(), portNo);
-                                checkConnectedStatus();
-                            }
-                        });
+                        try {
+                            requireActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ((DPApplication) requireActivity().getApplication()).setSocketData(SocketCreate.getSocket(), portNo);
+                                    checkConnectedStatus();
+                                }
+                            });
+                        } catch (Exception ex){
+                            ex.printStackTrace();
+                        }
                     }
                 });
 
@@ -134,8 +138,10 @@ public class ScannerDialogFragment extends DialogFragment {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    startActivity(new Intent(requireContext(), CommonActivity.class));
-                    requireActivity().finish();
+                    if(requireContext() != null) {
+                        startActivity(new Intent(requireContext(), CommonActivity.class));
+                        requireActivity().finish();
+                    }
                 }
             }, 5000);
         }

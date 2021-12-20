@@ -57,7 +57,7 @@ public class SocketCreate {
         asyncServer.listen(host, port, new ListenCallback() {
             @Override
             public void onAccepted(final AsyncSocket socket) {
-                Log.d("TAG", "Receive socket: " + socket.getServer());
+                Log.d("TAG", "FragmentManager" + socket.getServer());
                 checkConnectedAndDisconnectedListner.updateSocketGlobal(port);
                 SocketCreate.socket = socket;
             }

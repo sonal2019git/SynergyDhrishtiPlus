@@ -161,30 +161,29 @@
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/stockHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stock"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/bottomLayout"
-        app:layout_constraintEnd_toStartOf="@id/pump_image"
-        app:layout_constraintStart_toEndOf="@id/hardwareStatusLL"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/meterLL"
         android:layout_width="250dp"
         android:layout_height="400dp"
         android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomLayout"
         app:layout_constraintEnd_toStartOf="@id/pump_image"
-        app:layout_constraintStart_toEndOf="@id/hardwareStatusLL"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toEndOf="@id/hardwareStatusLL">
+
+        <TextView
+            android:id="@+id/stockHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stock"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/gauge2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <RelativeLayout
             android:id="@+id/gauge2"
@@ -192,7 +191,7 @@
             android:layout_height="120dp"
             app:layout_constraintEnd_toStartOf="@id/gauge3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stockHeading"
             app:layout_constraintBottom_toTopOf="@id/gauge4"
             android:orientation="vertical">
 
@@ -223,7 +222,7 @@
             android:layout_height="120dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/gauge2"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stockHeading"
             app:layout_constraintBottom_toTopOf="@id/gauge5">
 
             <pl.pawelkleczkowski.customgauge.CustomGauge
